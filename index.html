@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>cool hour logger</title>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="js/jquery-ui-1.8.16.custom.min.js"></script>
+		<script src="client.js"></script>
+		<link rel="stylesheet" href="css/excite-bike/jquery-ui-1.8.16.custom.css">
+		<style>
+			body {
+				margin: 0 auto;
+				text-align: center
+			}
+			header {
+				position: relative;
+				top: 80px
+			}
+			header ul {
+				list-style-type: none;
+			}
+			header ul li {
+				float: left;
+				background: green;
+				border-radius: 42px;
+				box-shadow: 2px 2px darkgreen;
+				padding: 1em
+			}
+			header label p {
+				border-radius: 22px;
+				background: rgba(255,255,255,0.4);
+				font-size: 3em;
+			}
+			header .days {
+				width: 1em;
+				font-size: 3em;
+				text-align: center;
+				border-radius: 4px
+			}
+			article {
+			}
+			.clear {clear: both}
+		</style>
+	</head>
+	<body>
+		<header>
+			<input id="picker" placeholder="today">
+			<ul>
+				<li>
+					<label><p>m</p><input id="1" class="days" type="text" placeholder="8"></label>
+				</li>
+				<li>
+					<label><p>t</p><input id="2" class="days" type="text" placeholder="8"></label>
+				</li>
+				<li>
+					<label><p>w</p><input id="3" class="days" type="text" placeholder="8"></label>
+				</li>
+				<li>
+					<label><p>th</p><input id="4" class="days" type="text" placeholder="8"></label>
+				</li>
+				<li>
+					<label><p>f</p><input id="5" class="days" type="text" placeholder="8"></label>
+				</li>
+			</ul>
+		</header>
+		<p style="clear"></p>
+		<article>
+			<button id="button">get hours</button>
+			<label>here are your hours: <textarea rows=14 cols=45 id="out"></textarea></label>
+		</article>
+		<footer>
+		</footer>
+	</body>
+</html>
