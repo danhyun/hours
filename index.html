@@ -9,19 +9,27 @@
 		<link rel="stylesheet" href="css/excite-bike/jquery-ui-1.8.16.custom.css">
 		<style>
 			body {
-			  padding: 20px 50px 20px 50px;
 			  font: 14px courier;
 			  margin: 0 auto;
 			  text-align: center;
-			  width: 960px
+			  width: 724px;
+			  line-height: 18px;
+			  color: #444
 			}
 			
 			input { font-face: courier }
 			
-			header { height: 180px; padding-bottom: 2em; width:100%; margin: 0 auto }
+			header { height: 180px; padding-bottom: 2em; width:100%; margin: 0 auto; clear:both }
 			h1 {position: relative; float: left}
 			a {
 			  color: #00B7FF;
+			}
+			
+			.days {
+				width: 1em;
+				font-size: 3em;
+				text-align: center;
+				border-radius: 4px;
 			}
 			
 			.week {
@@ -29,39 +37,66 @@
 			}
 			
 			.week li {
-				float: left
+				float: left;
+				padding-left: 5px
+			}
+			
+			.week p {
+				font-size: 1.4em
+			}
+			
+			.row::before, .row::after { display: table; content:"" }
+			.row::after {clear: both}
+			.row { margin-left: -20px}
+			
+			.span6 {
+				float: left;
+				width: 352px;
+				margin-left: 20px;
 			}
 		</style>
 	</head>
 	<body>
+		<h1>hour logger</h1>
 		<header>
-			<h1>hour logger</h1>
-			<p style="clear:both">&nbsp;</p>
-			<ul class="week">
-				<li>
-					<label><p>m</p><input id="1" class="days" type="text" placeholder="8"></label>
-				</li>
-				<li>
-					<label><p>t</p><input id="2" class="days" type="text" placeholder="8"></label>
-				</li>
-				<li>
-					<label><p>w</p><input id="3" class="days" type="text" placeholder="8"></label>
-				</li>
-				<li>
-					<label><p>th</p><input id="4" class="days" type="text" placeholder="8"></label>
-				</li>
-				<li>
-					<label><p>f</p><input id="5" class="days" type="text" placeholder="8"></label>
-				</li>
-			</ul>
+			<div class="row">
+				<div class="span6">
+					<ul class="week">
+						<li>
+							<label><p>m</p><input id="1" class="days" type="text" placeholder="8"></label>
+						</li>
+						<li>
+							<label><p>t</p><input id="2" class="days" type="text" placeholder="8"></label>
+						</li>
+						<li>
+							<label><p>w</p><input id="3" class="days" type="text" placeholder="8"></label>
+						</li>
+						<li>
+							<label><p>th</p><input id="4" class="days" type="text" placeholder="8"></label>
+						</li>
+						<li>
+							<label><p>f</p><input id="5" class="days" type="text" placeholder="8"></label>
+						</li>
+					</ul>
+				</div>
+				
+				<section class="span6">
+					<label>here are your hours: <textarea rows=14 cols=40 id="out"></textarea></label>
+				</section>
+			</div>
 		</header>
+		
 		<p style="clear:both">&nbsp;</p>
-		<article>
-			<button id="button">get hours</button>
-			<input id="picker" placeholder="today">
-			<label>here are your hours: <textarea rows=14 cols=45 id="out"></textarea></label>
+		
+		<article class="row">
+			<section class="span6">
+				<button id="button">get hours</button>
+				<input id="picker" placeholder="today">
+			</section>
 		</article>
-		<footer>
-		</footer>
+		
+		<p style="clear:both">&nbsp;</p>
+		
+		<footer>&macr;\_(&#x30c4;)_/&macr;</footer>
 	</body>
 </html>
