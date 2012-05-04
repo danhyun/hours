@@ -1,0 +1,13 @@
+body { font: 14px courier; margin: 0 auto; text-align: center; width: 724px; line-height: 18px; color: #444 }
+input { font-face: courier }
+header { height: 180px; padding-bottom: 2em; width:100%; margin: 0 auto; clear:both }
+h1 {position: relative; float: left}
+a { color: #00B7FF }
+.days { width: 1em; font-size: 3em; text-align: center; border-radius: 4px }
+.week { list-style-type: none }
+.week li { float: left; padding-left: 5px }
+.week p { font-size: 1.4em }
+.row::before, .row::after { display: table; content:"" }
+.row::after {clear: both}
+.row { margin-left: -20px}
+.span6 { float: left; width: 352px; margin-left: 20px }

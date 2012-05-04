@@ -1,7 +1,7 @@
 (function($){
 
 	var local_key = "week";
-	var weekly = JSON.parse(localStorage[local_key]);
+	var weekly = JSON.parse(localStorage[local_key] || null);
 	
 	$(function() {
 		var picker = $("#picker");
@@ -86,8 +86,8 @@
 			
 			var summary = getDateRangeHours(startingDate, week);
 			
-			var out = $("#out");
-			out.empty();
+			var out = $("#out").empty();
+			
 			for (var i = 0; i < summary.log.length; i++) {
 				var log = summary.log[i];
 				out.append(log.date.toLocaleDateString() + ": " + log.hours + " hours\n");
