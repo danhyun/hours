@@ -9,43 +9,34 @@
 		<link rel="stylesheet" href="css/excite-bike/jquery-ui-1.8.16.custom.css">
 		<style>
 			body {
-				margin: 0 auto;
-				text-align: center
+			  padding: 50px;
+			  font: 14px courier;
+			  margin: 0 auto;
+			  text-align: center
 			}
-			header {
-				position: relative;
-				top: 80px
+			
+			input { font-face: courier }
+			
+			header { height: 80px; padding-bottom: 2em }
+			
+			a {
+			  color: #00B7FF;
 			}
-			header ul {
-				list-style-type: none;
+			
+			.week {
+				list-style-type: none
 			}
-			header ul li {
-				float: left;
-				background: green;
-				border-radius: 42px;
-				box-shadow: 2px 2px darkgreen;
-				padding: 1em
+			
+			.week li {
+				float: left
 			}
-			header label p {
-				border-radius: 22px;
-				background: rgba(255,255,255,0.4);
-				font-size: 3em;
-			}
-			header .days {
-				width: 1em;
-				font-size: 3em;
-				text-align: center;
-				border-radius: 4px
-			}
-			article {
-			}
-			.clear {clear: both}
 		</style>
 	</head>
 	<body>
 		<header>
-			<input id="picker" placeholder="today">
-			<ul>
+			<p style="position: relative; float: left">hour logger</p>
+			<p style="clear:both">&nbsp;</p>
+			<ul class="week">
 				<li>
 					<label><p>m</p><input id="1" class="days" type="text" placeholder="8"></label>
 				</li>
@@ -63,9 +54,10 @@
 				</li>
 			</ul>
 		</header>
-		<p style="clear"></p>
+		<p style="clear:both">&nbsp;</p>
 		<article>
 			<button id="button">get hours</button>
+			<input id="picker" placeholder="today">
 			<label>here are your hours: <textarea rows=14 cols=45 id="out"></textarea></label>
 		</article>
 		<footer>

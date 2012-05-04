@@ -1,18 +1,19 @@
 (function($){
-	$(document).ready(function(){
+
+	var local_key = "week";
+	var weekly = localStorage[local_key];
+	
+	$(function() {
 		var picker = $("#picker");
-		picker.datepicker({
-			dateFormat: "yy-mm-dd"
-		});
+		picker.datepicker({ dateFormat: "yy-mm-dd" });
 		
-		if (localStorage["weekly.1"]) {
+		if (weekly) {
 			$(".days").each(function(){
-				this.value = localStorage["weekly."+this.id];
+				$(this).val(weekly[this.id]);
 			});
 		}
 		
 		var getDailyHoursFromForm = function() {
-			var total = 0;
 			var week = {
 				1: {
 					hours: 0
@@ -32,8 +33,10 @@
 			};
 			$("input.days").each(function(){
 				week[this.id].hours = Number(this.value);
-				localStorage["weekly."+this.id] = Number(this.value);
 			});
+			
+			localStorage["week"] = JSON.stringify(week);
+			
 			return week;
 		};
 		
@@ -75,7 +78,6 @@
 		
 		$("#button").click(function(){
 			var week = getDailyHoursFromForm();
-			console.log(week);
 			
 			var startingDate = null; 
 			if (picker.val()) {
@@ -83,7 +85,6 @@
 			}
 			
 			var summary = getDateRangeHours(startingDate, week);
-			console.log(summary);
 			
 			var out = $("#out");
 			out.empty();
