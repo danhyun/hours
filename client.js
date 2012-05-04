@@ -1,7 +1,7 @@
 (function($){
 
 	var local_key = "week";
-	var weekly = localStorage[local_key];
+	var weekly = JSON.parse(localStorage[local_key]);
 	
 	$(function() {
 		var picker = $("#picker");
@@ -9,7 +9,7 @@
 		
 		if (weekly) {
 			$(".days").each(function(){
-				$(this).val(weekly[this.id]);
+				$(this).val(weekly[this.id].hours);
 			});
 		}
 		
